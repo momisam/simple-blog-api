@@ -16,3 +16,13 @@ app.use('/admin', (req, res, next) => {
     }
 });
 
+//Public Route
+app.get('/public', (req, res,) => {
+    res.send('Welcome to my Oluchi blog!');
+});
+
+//protected Route
+app.get('/admin', (req, res) => {
+    res.send('Welcome to the admin panel!');
+});
+
