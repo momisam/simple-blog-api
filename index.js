@@ -6,3 +6,13 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/admin', (req, res, next) => {
+    const authToken = req.headers['authorization'];
+    if (authToken === 'o50592'){
+        console.log('User authenticated');
+        next();
+    } else {
+        res.status(401).send('Unauthorized: Invalid Token');
+    }
+});
+
