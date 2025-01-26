@@ -26,3 +26,9 @@ app.get('/admin', (req, res) => {
     res.send('Welcome to the admin panel!');
 });
 
+//Error-Handling middleware
+app.use((err, req, res, next) => {
+    console.error('Error:', err.message);
+    res.status(500).send('Something went wrong!');
+});
+
