@@ -1,6 +1,6 @@
 const express =  require('express');
 const app = express();
-
+port = 3000;
 app.use((req, res, next) => {
     console.log(`${req.method} request to ${req.url}`);
     next();
@@ -32,3 +32,6 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+});
